@@ -2,11 +2,14 @@ package jpabook.jpashop.domain;
 
 import jakarta.persistence.*;
 import jpabook.jpashop.domain.Item.Item;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class OrderItem {
     @Id @GeneratedValue
     @Column(name = "order_item_id")
@@ -45,6 +48,6 @@ public class OrderItem {
      * 주문 상품 전체 가격 조회
      * */
     public int getTotalPrice() {
-        return this.getOrderPrice() * this.getOrderPrice();
+        return this.getOrderPrice() * this.getCount();
     }
 }
