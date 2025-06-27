@@ -38,7 +38,7 @@ public class OrderSimpleApiController {
         for (Order order : all) {
             order.getMember().getName();
             order.getDelivery().getAddress();
-            order.getOrderItems().size();
+//            order.getOrderItems().size();
         }
 
         return all;
